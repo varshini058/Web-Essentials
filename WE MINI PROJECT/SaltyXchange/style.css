@@ -1,0 +1,719 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --border:1px solid black;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --light-color:#666;
+    --light-white:#ccc;
+    --light-bg:#f5f5f5;
+}
+*{
+    font-family: 'Rubik', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    transition:all .2s linear;
+ }
+ body{
+    font-family: 'Rubik', sans-serif;
+ }
+.message{
+    position: sticky;
+    top:0;
+    margin:0 auto;
+    max-width: 1200px;
+    background-color:white;
+    padding:2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10000;
+    gap:1.5rem;
+ }
+ 
+ .message span{
+    font-size: 2rem;
+    color:black;
+ }
+ 
+ .message i{
+    cursor: pointer;
+    color:red;
+    font-size: 2.5rem;
+ }
+ 
+ .message i:hover{
+    transform: rotate(90deg);
+ }
+ .form-container{
+    min-height: 100vh;
+    background-image: url(login_bg.avif);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding:2rem;
+ }
+ 
+ .form-container form{
+    padding:2rem;
+    width: 50rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    background-color: white;
+    opacity: 0.8;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+ .form-container .form1{
+   padding:30px;
+   width: 60%;
+   border-radius: .5rem;
+   box-shadow: var(--box-shadow);
+   background-color: white;
+   opacity: 0.8;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+ .form-container form h3{
+    font-size: 40px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color:black;
+ }
+ 
+ .form-container form .box{
+    width: 90%;
+    border-radius:10px;
+    background-color:rgb(240, 182, 115);
+    padding:10px 20px 10px;
+    font-size: 20px;
+    color:black;
+    border:var(--border);
+    margin:2px 0;
+    
+ }
+ 
+ .form-container form p{
+    padding-top: 1.5rem;
+    font-size: 2rem;
+    color:black;
+ }
+ 
+ .form-container form p a{
+    color:orange;
+ }
+ 
+ .form-container form p a:hover{
+    text-decoration: underline;
+ }
+ .btn{
+   margin-top: 1rem;
+   padding:1rem 3rem;
+   cursor: pointer;
+   color:black;
+   font-size: 1.8rem;
+   border-radius: .5rem;
+   text-transform: capitalize;
+ }
+ .btn:hover{
+    background-color:black;
+    color: white;
+ }
+ 
+.header .header-1{
+    background-color: var(--light-bg);
+    font-size: 10px;
+ }
+ 
+ .header .header-1 .flex{
+    padding:15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin:0 auto;
+
+ }
+ 
+ .header .header-2{
+    background-color:white;
+    box-shadow: var(--box-shadow);
+ }
+ 
+ .header .header-2.active{
+    position: fixed;
+    top:0; left:0; right:0;
+    z-index: 1000;
+ }
+ 
+ .header .header-2 .flex{
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin:0 auto;
+    position: relative;
+ }
+ 
+ .header .header-1 .flex .share a{
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    color:black;
+ }
+ 
+ .header .header-1 .flex .share a:hover{
+    color:orange;
+ }
+ 
+ .header .header-1 .flex p{
+    font-size:20px;
+    color:var(--light-color);
+ }
+ 
+ .header .header-1 .flex p a{
+    color:orange;
+ }
+ 
+ .header .header-1 .flex p a:hover{
+    text-decoration: underline;
+ }
+ 
+ .header .header-2 .flex .logo{
+    font-size: 2rem;
+    color:darkred;
+ }
+ .header .header-2 .flex .navbar a{
+    font-size: 22px;
+    margin-right: 5px;
+    color:rgb(56, 54, 54);
+ }
+ 
+ .header .header-2 .flex .navbar a:hover{
+    color:darkred;
+    text-decoration: underline;
+ }
+ 
+ .header .header-2 .flex .icons > *{
+    font-size: 2rem;
+    color:black;
+    cursor: pointer;
+    margin-left: 1.5rem;
+ }
+ 
+ .header .header-2 .flex .icons > *:hover{
+    color:darkred;
+ }
+ .header .header-2 .flex .user-box{
+    position: absolute;
+    top:120%; right:2rem;
+    background-color: white;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    padding:2rem;
+    text-align: center;
+    width: 30rem;
+    display: none;
+    animation: fadeIn .2s linear;
+ }
+ 
+ .header .header-2 .flex .user-box.active{
+    display: inline-block;
+ }
+ 
+ .header .header-2 .flex .user-box p{
+    font-size: 2rem;
+    color:black;
+    margin-bottom: 1.5rem;
+ }
+ 
+ .header .header-2 .flex .user-box p span{
+    color:orange;
+ }
+ 
+ .header .header-2 .flex .user-box .delete-btn{
+    margin-top: 0;
+ }
+ .header .header-2 .flex .navbar{
+    display: block;
+      font-size: 2.5rem; 
+}
+
+.header .header-2 .flex .user-box{
+    position: absolute;
+    top:120%; right:2rem;
+    background-color: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    padding:2rem;
+    text-align: center;
+    width: 30rem;
+    display: none;
+    animation: fadeIn .2s linear;
+ }
+ 
+ .header .header-2 .flex .user-box.active{
+    display: inline-block;
+ }
+ 
+ .header .header-2 .flex .user-box p{
+    font-size: 2rem;
+    color:var(--light-color);
+    margin-bottom: 1.5rem;
+ }
+ 
+ .header .header-2 .flex .user-box p span{
+    color:var(--orange);
+ }
+ 
+ .header .header-2 .flex .user-box .delete-btn{
+    margin-top: 0;
+ }
+.home{
+        min-height: 100vh;
+        background-image: url('home_bg.avif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:40px;
+}
+     
+.home .content1{
+        text-align: center;
+        width: 60rem;
+        padding:30px;
+}
+.home .content1 h3{
+         margin: 20px;
+        font-size: 5.5rem;
+        color:brown;
+        text-transform: uppercase;
+        text-shadow:2px 2px #2e2e2e ;
+}
+     
+.home .content1 p{
+        font-size:1.8rem;
+        color:var(--light-white);
+        padding:1rem 0;
+        line-height: 1.5;
+}
+.option-btn,
+.white-btn{
+        display: inline-block;
+        margin-top: 1rem;
+        padding:1rem 3rem;
+        cursor: pointer;
+        color:black;
+        font-size: 1.8rem;
+        border-radius: .5rem;
+        background-color: #a8a6a6;
+        text-transform: capitalize;
+        opacity: 0.8;
+}
+.cook-btn{
+   display: inline-block;
+   padding:1px 2px;
+   cursor: pointer;
+   font-size:20px;
+   background-color: rgb(231, 131, 31);
+   text-transform: capitalize;
+   object-fit: cover;
+}
+.cook-btn a{
+   color:white;
+}
+.cook-btn:hover{
+   background-color: black;
+   color:white;
+}
+.option-btn:hover,
+.white-btn:hover{
+        background-color: black;
+        color:white;
+     }
+@keyframes fadeIn {
+        0%{
+           transform: translateY(1rem);
+           opacity: .2s;
+    }
+}
+.recipes{
+    margin:40px;
+    font-size: 50px;
+    text-align: center;
+}
+.recipes .box-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.recipes .box-container .box{
+    max-height:500px;
+    overflow: hidden;
+    width:30%;
+    box-shadow: var(--box-shadow);
+    background-color: white;
+    border: 5px #636161;
+    border-radius: 30px;
+    margin-right: 20px;
+    position: relative;
+}
+.recipes .box-container .box .name{
+    font-size: 30px;
+    font-weight: bold;
+    color:darkred;
+    padding: 10px;
+}
+.recipes .box-container .box .description{
+    font-size: 25px;
+    font-weight: 300;
+    text-shadow:2px #ccc;
+    color:black;
+    padding: 10px;
+    max-height: 60px;
+}
+.recipes .box-container .box .image{
+    height:300px;
+    width: 100%;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 20px;
+    display: block;
+   position: relative;
+}
+.recipes .box-container .box a{
+   background-color: #2e2e2e;
+   color: white;
+   text-decoration: none;
+   height: 40px;
+   font-size: 28px;
+   width: 100%;
+}
+.heading{
+   margin: 20px;
+   text-align: center;
+}
+.heading h3{
+   font-size: 5rem;
+   color:black;
+   text-transform: uppercase;
+}
+
+.heading p{
+   font-size: 2.5rem;
+   color:var(--light-color);
+}
+.recipecontent{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin: 40px;
+   background-color: rgba(222, 89, 18, 0.662);
+   border-radius: 0 40px 40px 0;
+}
+.recipecontent .box{
+   color: white;
+   font-size: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding: 30px;
+}
+.recipecontent .imgbox{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 50%;
+}
+.recipecontent .imgbox img{
+   height:500px;
+   width:500px;
+   border-radius: 0 40px 40px 0;
+}
+.recipecontent .box .username{
+   display: flex;
+   flex-direction:row;
+   justify-content:space-between;
+   color:white;
+   text-align: left;
+   align-self: flex-start;
+}
+.content{
+   background-color: white;
+   box-shadow: 2px 2px 2px 2px rgba(0,0,0,.1);
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   margin: 40px;
+   border-radius: 10px;
+   padding: 30px;
+   border: solid 1px black;
+}
+.ingredients{
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;  
+   align-items: center;
+   box-shadow: #2e2e2e;
+}
+
+.list-ingredients{
+   list-style-type:disc;
+   font-size: 25px;
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.ing-card{
+   background-color: black;
+   border-radius: 20px;
+   margin: 10px;
+   width:50%;
+   padding:30px;
+   color: white;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-style: italic;
+}
+.inst-card{
+   width:50%;
+   border-radius: 20px;
+   margin: 10px;
+   padding: 20px;
+}
+.products{
+   display: flex;
+   flex-direction: column;
+   justify-content:center;
+}
+.instructions{
+   font-size: 22px;
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.video-card{
+   background-color: rgb(249, 249, 249);
+   border-radius: 20px;
+   margin: 40px;
+   font-size: large;
+   width:50%;
+   padding:30px;
+   color: white;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-style: italic;
+   width: 80%;
+   border: var(--border);
+   box-shadow: var(--box-shadow);
+}
+.profile{
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+}
+.profile .profile-content{
+   background-color:rgba(139, 6, 4, 0.7);
+   box-shadow: 2px 2px 2px 2px rgba(0,0,0,.1);
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: flex-start;
+   margin: 40px;
+   border-radius: 10px;
+   padding: 30px;
+   border: solid 1px white;
+   width: 50%;
+}
+.profile .profile-content .imgbox{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 50%;
+}
+.profile-content .profile-name{
+   color: white;
+   font-size:22px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 30px;
+   font-weight: 600;
+   text-shadow: 2px 2px darkred;
+}
+.recipes{
+   margin:30px;
+}
+.recipes .card-container{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+.card-container .card{
+   background-color: white;
+   box-shadow: 2px 2px 2px 2px rgba(0,0,0,.1);
+   display: flex;
+   flex-direction:column;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+   border-radius: 10px;
+   border: solid 1px black;
+   margin: 10px;
+   width: 20%;
+}
+.btn-edit{
+   display: inline-block;
+   margin-top:3px;
+   padding:10px 20px;
+   cursor: pointer;
+   background-color: green;
+   color:white;
+   font-size: 20px;
+   border-radius: .5rem;
+   text-decoration: none;
+}
+.btn-delete{
+   display: inline-block;
+   margin-top:3px;
+   padding:10px 20px;
+   cursor: pointer;
+   background-color: red;
+   color:white;
+   font-size: 20px;
+   border-radius: .5rem;
+   text-decoration: none;
+}
+.btn-logout{
+   display: inline-block;
+   margin-top:3px;
+   padding:10px 20px;
+   cursor: pointer;
+   background-color: yellow;
+   color:white;
+   font-size: 20px;
+   border-radius: .5rem;
+   text-decoration: none;
+}
+.card-container .card button a{
+   text-decoration: none;
+   color:white;
+}
+.recipes h1{
+   color:rgb(223, 133, 15);
+   font-size: 50px;
+   font-family:Fira Sans;
+   margin:40px;
+}
+.add-recipes form{
+   background-color:rgb(248, 216, 156);
+   border-radius: 20px;
+   padding:20px;
+   text-align: center;
+   box-shadow: var(--box-shadow);
+   border:var(--border);
+   max-width: 50rem;
+   margin:0 auto;
+}
+
+.add-recipes form h3{
+   font-size:40px;
+   text-transform: uppercase;
+   color:black;
+   margin-bottom: 10px;
+}
+
+.add-recipes form .box{
+   width: 100%;
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   margin:1rem 0;
+   padding:1.2rem 1.4rem;
+   color:var(--black);
+   font-size: 1.8rem;
+   border:var(--border);
+}
+.edit-recipe-form{
+   max-height: 80vh;
+   background-color: rgba(0,0,0,.7);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding:20px;
+   overflow-y: scroll;
+   position: fixed;
+   top:0; left:0; 
+   z-index: 1200;
+   width: 100%;
+}
+
+.edit-recipe-form form{
+   width:70%;
+   padding:30px;
+   text-align: center;
+   border-radius: 10px;
+   background-color: white;
+   
+}
+
+.edit-recipe-form form img{
+   height:100px;
+   margin-bottom: 10px;
+}
+
+.edit-recipe-form form .box{
+   margin:5px;
+   padding:5px 10px;
+   border:var(--border);
+   border-radius:10px;
+   background-color: var(--light-bg);
+   font-size:18px;
+   color:black;
+   width: 100%;
+}
+.header .header-2 .flex .user-box{
+   position: absolute;
+   top:120%; right:50px;
+   background-color:white;
+   border-radius:20px;
+   box-shadow: var(--box-shadow);
+   border:var(--border);
+   padding:10px;
+   text-align: center;
+   width: 30rem;
+   display: none;
+   animation: fadeIn .2s linear;
+}
+
+.header .header-2 .flex .user-box.active{
+   display: inline-block;
+}
+
+.header .header-2 .flex .user-box p{
+   font-size: 20px;
+   color:var(--light-color);
+   margin-bottom:10px;
+}
+
+.header .header-2 .flex .user-box p span{
+   color:orange
+}
+
+.header .header-2 .flex .user-box .delete-btn{
+   margin-top: 0;
+}
